@@ -10,10 +10,10 @@
 
 1. Был написан код для каждого из задания.
 2. Каждый файл с кодом был скомпилирован и запущен для проверки:
-.. gcc 03_summa_posledovatelnosty.c -p 03_summa_posledovatelnosty
-.. ./03_summa_posledovatelnosty
-.. gcc 14_summa_nechet_kvadratov.c -p 14_summa_nechet_kvadratov
-.. ./14_summa_nechet_kvadratov
+  *gcc 03_summa_posledovatelnosty.c -p 03_summa_posledovatelnosty
+  *./03_summa_posledovatelnosty
+  *gcc 14_summa_nechet_kvadratov.c -p 14_summa_nechet_kvadratov
+  *./14_summa_nechet_kvadratov
 3. Файлы были загружены на удалённый репозиторий:
 ..* git checkout -b pr2
 ..* git add .
