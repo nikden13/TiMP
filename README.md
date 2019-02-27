@@ -15,10 +15,10 @@
   * gcc 14_summa_nechet_kvadratov.c -p 14_summa_nechet_kvadratov
   * ./14_summa_nechet_kvadratov
 3. Файлы были загружены на удалённый репозиторий:
-⋅⋅* git checkout -b pr2
-⋅⋅* git add .
-⋅⋅* git commit -m "Added files for the second practical work"
-⋅⋅* git push -u origin pr2
+  * git checkout -b pr2
+  * git add .
+  * git commit -m "Added files for the second practical work"
+  * git push -u origin pr2
 
 ## Результаты
 
