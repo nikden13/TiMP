@@ -70,22 +70,6 @@ node *pop(queue *q)
 	else return NULL;
 }
 
-//очистка
-void clear_queue(queue *q)
-{
-	if (q->head)
-	{
-		queue_node *nq;
-		while (q->head)
-		{
-			nq = q->head;
-			q->head = q->head->next;
-			free(nq);
-		}
-	}
-	q->head = q->tail = NULL;
-}
-
 
 //функции дерева
 //инициализация дерева
@@ -146,35 +130,19 @@ void print(node *n)
 {
 	if (n)
 	{	
-		queue q1, q2;
-		init_queue(&q1);
-		init_queue(&q2);
-		push(&q1, n);
-		while(1)
+		queue q;
+		init_queue(&q);
+		push(&q, n);
+		while(q.head)
 		{
-			while(q1.head)
-			{
-				node *tmp  = pop(&q1);
-				if (tmp->left)
-					push(&q2, tmp->left);
-				if (tmp->right)
-					push(&q2, tmp->right);
-				if (q1.head == NULL && q2.head == NULL)
-					printf("%d", tmp->value);
-				else printf("%d ", tmp->value);
-			}
-			if (q2.head == NULL)
-				break;
-			q1.head = q2.head;
-			q1.tail = q2.tail;
-			queue_node *temp = q1.head;
-			while (q2.head)
-			{
-				temp->next = q2.head->next;
-				q2.head = q2.head->next;
-				temp = temp->next;
-			}
-			clear_queue(&q2);
+			node *tmp  = pop(&q);
+			if (tmp->left)
+				push(&q, tmp->left);
+			if (tmp->right)
+				push(&q, tmp->right);
+			if (q.head == NULL)
+				printf("%d", tmp->value);
+			else printf("%d ", tmp->value);
 		}
 	}
 }
